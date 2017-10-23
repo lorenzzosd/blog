@@ -1,0 +1,28 @@
+<!-- Page Content -->
+<div class="container">
+  <div class="row">
+    <!-- Post Content Column -->
+    <div class="col-lg-8">
+      <% @posts.each do |post| %>
+        <!-- Title -->
+        <h1 class="mt-4"><%= post.title %></h1>
+
+        <!-- Author -->
+        <p class="lead">
+          by
+          <%= post.user.name %>
+        </p>
+        <hr>
+
+        <!-- Date/Time -->
+        <p><%= post.created_at %></p>
+        <hr>
+
+        <!-- Post Content -->
+        <%= raw post.html %>
+      <% end %>
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
